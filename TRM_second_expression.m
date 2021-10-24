@@ -1,4 +1,8 @@
 function [output] = TRM_second_expression()
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+This code solves LST using second-order Taylor expansion SEB
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 syms SWin LWin Ta q albedo ra rs emis rhoa Ps G
 
 % constants
@@ -70,9 +74,3 @@ globalconstant.Rv  = 461.5;       % water vapor gas constant J/kg/K
 globalconstant.sb         = 5.670367*10^(-8); % stephan-boltzman constant, W/(m^2 K^4)
 globalconstant.epsilon    = globalconstant.R/globalconstant.Rv; 
 end
-
-
-
-
-
-
