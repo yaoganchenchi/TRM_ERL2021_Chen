@@ -1,7 +1,7 @@
 function [output] = TRM_second_expression()
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-This code solves LST using second-order Taylor expansion SEB
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%This code solves LST using second-order Taylor expansion SEB. %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 syms SWin LWin Ta q albedo ra rs emis rhoa Ps G
 
