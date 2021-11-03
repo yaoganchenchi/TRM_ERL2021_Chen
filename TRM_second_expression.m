@@ -78,6 +78,6 @@ globalconstant.cp  = 1004.64;                 % specific heat at constant pressu
 globalconstant.Lv  = 2.4665*10^6;             % latent heat of vaparization        [J kg^–1     ]
 globalconstant.R   = 287.058;                 % dry air gas constant               [J kg^-1 k^-1]
 globalconstant.Rv  = 461.5;                   % water vapor gas constant           [J kg^-1 k^-1]
-globalconstant.sb         = 5.670367*10^(-8); % stephan-boltzman constant          [W m^-2 K^-4]
-globalconstant.epsilon    = globalconstant.R/globalconstant.Rv; % ratio between the molar masses of water and dry air
+globalconstant.sb         = 5.670367*10^(-8); % stephan-boltzman constant          [W m^-2 K^-4 ]
+globalconstant.epsilon    = globalconstant.R/globalconstant.Rv; % ratio between the molar masses of water and dry air [dimensionless]
 end
