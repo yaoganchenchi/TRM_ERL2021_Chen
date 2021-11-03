@@ -1,9 +1,16 @@
 function [output] = TRM_second_expression()
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%This code solves LST using second-order Taylor expansion SEB. %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 syms SWin LWin Ta q albedo ra rs emis rhoa Ps G
+% SWin  : incoming shortwave radiation   [W m^-2       ]
+% LWin  : incoming longwave radiation    [W m^-2       ]
+% Ta    : air temperature                [K            ]
+% q     : specific humidity              [kg kg^-1     ] 
+% albedo: albedo for shortwave radiation [dimensionless]
+% ra    : aerodynamic resistance         [s m^-1       ]
+% rs    : surface resistance             [s m^-1       ]
+% emis  : surface emissivity             [dimensionless]
+% rhoa  : air density                    [kg m^-3      ]
+% Ps    : surface pressure               [Pa           ]
+% G     : ground heat flux               [W m^-2       ] 
 
 % constants
 globalconstant= getConstants();
@@ -67,10 +74,10 @@ delta2 = 611*exp(((1727*T)./100 - 9434601/2000)./(T - 717/20)).*(1727./(100*(T -
 end
 
 function globalconstant= getConstants()
-globalconstant.cp  = 1004.64;      % specific heat at constant pressure, J/kg/K
-globalconstant.Lv  = 2.4665*10^6; % latent heat of vaparization
-globalconstant.R   = 287.058;       % dry air gas constant J/kg/K
-globalconstant.Rv  = 461.5;       % water vapor gas constant J/kg/K
-globalconstant.sb         = 5.670367*10^(-8); % stephan-boltzman constant, W/(m^2 K^4)
-globalconstant.epsilon    = globalconstant.R/globalconstant.Rv; 
+globalconstant.cp  = 1004.64;                 % specific heat at constant pressure [J kg^-1 K^-1]
+globalconstant.Lv  = 2.4665*10^6;             % latent heat of vaparization        [J kg^–1     ]
+globalconstant.R   = 287.058;                 % dry air gas constant               [J kg^-1 k^-1]
+globalconstant.Rv  = 461.5;                   % water vapor gas constant           [J kg^-1 k^-1]
+globalconstant.sb         = 5.670367*10^(-8); % stephan-boltzman constant          [W m^-2 K^-4]
+globalconstant.epsilon    = globalconstant.R/globalconstant.Rv; % ratio between the molar masses of water and dry air
 end
