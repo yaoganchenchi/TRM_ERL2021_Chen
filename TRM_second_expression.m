@@ -60,17 +60,20 @@ output.energy_balance=energy_balance;
 output.Rn=Rn;
 end
 
+% calculate saturation specific humidity
 function [ qsat ] = qs( T, P )
 globalconstant= getConstants();
 esat = 611*exp(17.27*(T-273.15)./(T-273.15+237.3));  % Eq. 3.9a from Dingman in Pa
 qsat = globalconstant.epsilon*esat./P; % not account for vapor pressure 
 end
 
+% 1st order derivative for saturation vapor pressure with respect to temperature
 function delta= desdT(T1)
 % T in K, delta is Pa/K
 delta = 611.*exp(((1727*T1)/100 - 9434601/2000)./(T1 - 717/20)).*(1727./(100*(T1 - 717/20)) - ((1727*T1)/100 - 9434601/2000)./(T1 - 717/20).^2);
 end
 
+% 2nd order derivative for saturation vapor pressure with respect to temperature
 function delta2= des2dT2(T)
 delta2 = 611*exp(((1727*T)./100 - 9434601/2000)./(T - 717/20)).*(1727./(100*(T - 717/20)) - ...
     ((1727*T)/100 - 9434601/2000)./(T - 717/20).^2).^2 - 611*exp(((1727*T)./100 - ...
